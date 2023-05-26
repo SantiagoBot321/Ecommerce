@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
+import '../styles/Header.module.css';
+import PageContext from "../context/PageContext";
+
 
 const Header = () => {
+  const {change} = useContext(PageContext)
   return (
       <header>
-        <picture id="contenedor-logo-header">
-          <img src={headerlogo} id='logo-header' alt="logo-header" />
+        <picture onClick={() => change(null)}>
+          <img src="" alt="logo-header" />
         </picture>
         <ul>
           <li>
-            <button>Registrarse</button>
+            Registrarse
+          </li>
+          <li onClick={() => change('login')}> 
+            Login
           </li>
           <li>
-            <button>Login</button>
-          </li>
-          <li id="contenedor-carrito">
-          <button>Mi carrito</button>
+            Mi carrito
           </li>
         </ul>
       </header>
