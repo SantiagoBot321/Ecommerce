@@ -6,7 +6,6 @@ import Picture from './components/Picture';
 import ProductGrid from './components/ProductGrid';
 import Footer from './components/Footer';
 
-
 function App() {
   const {page} =
     useContext(PageContext)

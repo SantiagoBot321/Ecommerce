@@ -1,20 +1,20 @@
-import React from 'react'
-import productDatabase from '../database/product-database'
-
+import React from 'react';
+import productDatabase from '../database/product-database';
+import pGrid from '../styles/ProductGrid.module.css';
 
 
 const ProductGrid = () => {
   return (
-    <section>
-      <ul>
+    <section className={pGrid.section}>
+      <ul className={pGrid.products}>
       {productDatabase.map((product) => (
         <li key={product.id}>
           <img src={product.img} alt={product.nameProduct} />
           <h3>{product.nameProduct}</h3>
           <p>${product.price}</p>
-          <button onClick={() => addToCart(product)}>
+          <p onClick={() => addToCart(product)}>
             Añadir al carrito
-          </button>
+          </p>
         </li>
       ))}
       </ul>

@@ -1,0 +1,14 @@
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+.products{
+    display: flex;
+    direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: auto;
+    width: 100%;
+}
