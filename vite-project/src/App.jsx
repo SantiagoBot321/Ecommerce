@@ -14,6 +14,7 @@ function App() {
       <Header />
       {page == null ?<> <Picture/> <ProductGrid /></>: null}
       {page == "login" ? <Login /> : null}
+      {page == "acces" ? <> <Picture/> <ProductGrid /></> : null}
       <Footer />
     </>
   );

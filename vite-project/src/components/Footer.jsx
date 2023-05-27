@@ -1,20 +1,31 @@
 import React from 'react'
+import footerStyles from '../styles/Footer.module.css'
 
 const Footer = () => {
   return (
-    <footer>
-      <picture>
-        <img src="" alt="" />
-      </picture>
-      <ul>
+    <footer className={footerStyles.footer}>
+      <ul className={footerStyles.footerInfo}>
         <li>
-          <h3>redes</h3>
+          <picture>
+            <img src="" alt="Logo-footer" />
+          </picture>
         </li>
         <li>
-          <h3>redes</h3>
+          <p>Dirección: </p>
         </li>
         <li>
-          <h3>redes</h3>
+          <p>Teléfono: </p>
+        </li>
+      </ul>
+      <ul className={footerStyles.footerNav}>
+        <li>
+          <p>redes</p>
+        </li>
+        <li>
+        <p>redes</p>
+        </li>
+        <li>
+        <p>redes</p>
         </li>
       </ul>
     </footer>

@@ -2,13 +2,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 90%;
+    margin-top: 3rem;
 }
 .products{
     display: flex;
-    direction: row;
-    align-items: center;
     flex-wrap: wrap;
-    gap: auto;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 1.5rem;
+    gap: 2.5em;
+    padding: 1rem;
     width: 100%;
+}
+
+.productCard{
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    padding: .5rem;
+}
+
+.productImgCont{
+    max-width: fit-content;
+}
+
+.productImg{
+    width: 250px;
+}
+
+.producCarrito{
+    text-align: center;
 }

@@ -10,8 +10,8 @@ const Header = () => {
         <picture onClick={() => change(null)}>
           <img src="" alt="logo-header" />
         </picture>
-        <ul className={headerStyle.nav}>
-          <li className={headerStyle.boton}>
+        <ul className={headerStyle.nav} >
+          <li className={headerStyle.boton} onClick={() => change('save')}>
             <p>Registrarse</p>
           </li>
           <li className={headerStyle.boton} onClick={() => change('login')}> 
