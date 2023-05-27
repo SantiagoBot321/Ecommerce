@@ -1,4 +1,5 @@
 import React from 'react'
+import productDatabase from './product-database.js'
 
 const ProductGrid = () => {
   return (
@@ -17,5 +18,22 @@ const ProductGrid = () => {
     </section>
   )
 }
+
+const ProductGrid = ({ addToCart }) => {
+  return (
+    <div>
+      {productDatabase.map((product) => (
+        <div key={product.id}>
+          <img src={product.image} alt={product.name} />
+          <h3>{product.name}</h3>
+          <p>${product.price}</p>
+          <button onClick={() => addToCart(product)}>
+            Añadir al carrito
+          </button>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default ProductGrid
