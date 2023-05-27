@@ -13,10 +13,8 @@ function App() {
   return (
     <>
       <Header />
-      {page == null ? <h1>página principal</h1> : null}
+      {page == null ?<> <Picture/> <ProductGrid /></>: null}
       {page == "login" ? <Login /> : null}
-      <Picture /> 
-      <ProductGrid />
       <Footer />
     </>
   );
