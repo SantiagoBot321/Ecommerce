@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import UserContext from "../context/UserContext";
 
 const UserProvider = ({children}) => {
-    const {user, set} = useState(null);
-    /* const login = function(username, password){
+    const [user, set] = useState(null);
+     const login = function(username, password){
         fetch().then(respuesta =>respuesta.json).then(usuarios =>{
             //Verificación usuarios
             return set({username});
@@ -12,8 +12,8 @@ const UserProvider = ({children}) => {
     } 
     const save = function(username, password) {
         fetch(url, {});
-    }*/
-    return <UserContext.Provider value={{user, set }}>
+    }
+    return <UserContext.Provider value={{user, set, login, save }}>
         {children}</UserContext.Provider>;
 };
 export default UserProvider;
