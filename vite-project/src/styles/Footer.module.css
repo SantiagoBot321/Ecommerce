@@ -6,8 +6,8 @@ footer{
   justify-content: space-between;
   align-items: center;
   margin-top: 3rem;
-  padding-bottom: 1rem;
-  height: 7rem;
+  padding: 1rem;
+  height: 5rem;
   background-color: rgb(208, 197, 177);
   width: 100%;
 }
@@ -29,4 +29,8 @@ padding: 0.5rem;
   gap: 1em;
   margin-right: 3vh;
   list-style: none;
+}
+
+span{
+  color: black;
 }
