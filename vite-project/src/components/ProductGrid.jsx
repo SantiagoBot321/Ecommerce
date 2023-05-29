@@ -1,14 +1,31 @@
-import React from 'react';
-import productDatabase from '../database/product-database';
 import pGrid from '../styles/ProductGrid.module.css';
+import React, { useState , useEffect } from 'react';
 
 
-const ProductGrid = () => {
+const ProductGrid = ({ addToCart }) => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          'https://6474c4567de100807b1bb4ed.mockapi.io/products'
+        );
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.log('Error al obtener los productos:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <section className={pGrid.section}>
       <h2>Productos</h2>
       <ul className={pGrid.products}>
-      {productDatabase.map((product) => (
+      {products.map((product) => (
         <li key={product.id} className={pGrid.productCard}>
           <picture className={pGrid.productImgCont}>
             <img src={product.img} alt={product.nameProduct} className={pGrid.productImg} />
@@ -25,4 +42,4 @@ const ProductGrid = () => {
   );
 };
 
-export default ProductGrid
+export default ProductGrid;

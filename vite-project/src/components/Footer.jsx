@@ -7,7 +7,7 @@ const Footer = () => {
       <ul className={footerStyles.footerInfo}>
         <li>
           <picture>
-            <img src="" alt="Logo-footer" />
+            <img src="/src/assets/Logo-minimal.png" alt="Logo-footer" className={footerStyles.img} />
           </picture>
         </li>
         <li>
