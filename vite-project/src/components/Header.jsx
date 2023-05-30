@@ -17,7 +17,7 @@ const Header = () => {
           <li className={headerStyle.boton} onClick={() => change('login')}> 
             <p>Login</p>
           </li>
-          <li className={headerStyle.boton}>
+          <li className={headerStyle.boton} onClick={() => change('Mi carrito')}>
             <p>Mi carrito</p>
           </li>
         </ul>

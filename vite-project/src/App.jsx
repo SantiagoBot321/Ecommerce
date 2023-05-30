@@ -12,9 +12,10 @@ function App() {
   return (
     <>
       <Header />
-      {page == null ?<> <Picture/> <ProductGrid /></>: null}
-      {page == "login" ? <Login /> : null}
-      {page == "acces" ? <> <Picture/> <ProductGrid /></> : null}
+        {page == null ?<> <Picture/> <ProductGrid /></>: null}
+        {page == "login" ? <Login /> : null}
+        {page == "acces" ? <> <Picture/> <ProductGrid /></> : null}
+        {page == "Mi carrito" ? <> <h2>Mi carrito</h2> </> : null}
       <Footer />
     </>
   );
