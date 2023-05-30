@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Picture from './components/Picture';
 import ProductGrid from './components/ProductGrid';
 import Footer from './components/Footer';
+import Purchases from './components/Purchases';
 
 function App() {
   const {page} =
@@ -15,6 +16,7 @@ function App() {
         {page == null ?<> <Picture/> <ProductGrid /></>: null}
         {page == "login" ? <Login /> : null}
         {page == "acces" ? <> <Picture/> <ProductGrid /></> : null}
+        {page === "purchases" ? <> <Purchases /> </> : null}
         {page == "Mi carrito" ? <> <h2>Mi carrito</h2> </> : null}
       <Footer />
     </>

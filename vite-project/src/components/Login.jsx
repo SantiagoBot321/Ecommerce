@@ -10,12 +10,18 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const access = login(email, password);
-    setEmail("");
-    setPassword("");
-    console.log("access", access);
-    if (access) {change(null)}
+    login(email, password)
+      .then((access) => {
+        setEmail("");
+        setPassword("");
+        console.log("access", access);
+        if (access) {
+          change("purchases"); // Cambiar el estado de la página a "purchases"
+        }
+      })
+      .catch((error) => console.error(error));
   };
+  
 
   return (
     <form onSubmit={handleSubmit}>
