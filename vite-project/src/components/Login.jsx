@@ -16,7 +16,7 @@ const Login = () => {
         setPassword("");
         console.log("access", access);
         if (access) {
-          change("purchases"); // Cambiar el estado de la página a "purchases"
+          change("productGrid"); // Cambiar el estado de la página a "purchases"
         }
       })
       .catch((error) => console.error(error));

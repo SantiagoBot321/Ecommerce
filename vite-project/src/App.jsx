@@ -16,7 +16,7 @@ function App() {
         {page == null ?<> <Picture/> <ProductGrid /></>: null}
         {page == "login" ? <Login /> : null}
         {page == "acces" ? <> <Picture/> <ProductGrid /></> : null}
-        {page === "purchases" ? <> <Purchases /> </> : null}
+        {page === "productGrid" ? <> <ProductGrid /> </> : null}
         {page == "Mi carrito" ? <> <h2>Mi carrito</h2> </> : null}
       <Footer />
     </>
