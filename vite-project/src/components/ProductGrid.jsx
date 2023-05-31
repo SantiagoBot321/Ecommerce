@@ -1,9 +1,10 @@
+import React, { useEffect, useState, useContext } from 'react';
+import CartContext from '../context/CartContext';
 import pGrid from '../styles/ProductGrid.module.css';
-import React, { useState , useEffect } from 'react';
 
-
-const ProductGrid = ({ addToCart }) => {
+const ProductGrid = () => {
   const [products, setProducts] = useState([]);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,18 +26,21 @@ const ProductGrid = ({ addToCart }) => {
     <section className={pGrid.section}>
       <h2>Productos</h2>
       <ul className={pGrid.products}>
-      {products.map((product) => (
-        <li key={product.id} className={pGrid.productCard}>
-          <picture className={pGrid.productImgCont}>
-            <img src={product.img} alt={product.nameProduct} className={pGrid.productImg} />
-          </picture>
-          <h3>{product.nameProduct}</h3>
-          <p>${product.price}</p>
-          <p className={pGrid.producCarrito} onClick={() => addToCart(product)}>
-            Añadir al carrito
-          </p>
-        </li>
-      ))}
+        {products.map((product) => (
+          <li key={product.id} className={pGrid.productCard}>
+            <picture className={pGrid.productImgCont}>
+              <img src={product.img} alt={product.nameProduct} className={pGrid.productImg} />
+            </picture>
+            <h3>{product.nameProduct}</h3>
+            <p>${product.price}</p>
+            <p
+              className={pGrid.producCarrito}
+              onClick={() => addToCart(product)}
+            >
+              Añadir al carrito
+            </p>
+          </li>
+        ))}
       </ul>
     </section>
   );
