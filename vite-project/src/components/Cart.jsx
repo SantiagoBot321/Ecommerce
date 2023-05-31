@@ -15,12 +15,12 @@ const Cart = () => {
             {cartItems.map((item) => (
               <li key={item.id}>
                 <h3>{item.nameProduct}</h3>
-                <p>Precio: ${item.price}</p> {/* Añadirle cantidad*/}
+                <p>Precio: ${item.price}</p>
                 <button onClick={() => removeFromCart(item.id)}>Eliminar</button>
               </li>
             ))}
           </ul>
-          <p>Valor total: ${totalPrice}</p> {/ Mostrar el valor total */}
+          <p>Valor total: ${totalPrice}</p>
         </div>
       ) : (
         <p>No hay productos en el carrito.</p>
