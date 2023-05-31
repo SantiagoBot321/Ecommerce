@@ -1,0 +1,34 @@
+.section{
+  width: 95%;
+  height: 68vh;
+  display: flex;
+  justify-content: center;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+  align-items: center;
+  background-color: antiquewhite;
+  border: 1px solid rgb(210, 198, 183);
+  border-radius: 1rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 15%;
+}
+
+input{
+  border-radius: 0.5rem;
+  height: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.boton{
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgb(210, 198, 183);
+
+}
