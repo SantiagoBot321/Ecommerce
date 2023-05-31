@@ -1,39 +1,36 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import UserContext from "../context/UserContext";
-
-
-
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [userError, setUserError] = useState(null);
-  const [totalPurchases, setTotalPurchases] = useState(0);
-  const apiUrl = "https://647555f4e607ba4797dbc8ab.mockapi.io/users";
+  const apiUrl = "https://6474c4567de100807b1bb4ed.mockapi.io/users";
 
   const login = (email, password) => {
-    return new Promise((resolve, reject) => {
-      fetch(apiUrl)
-        .then((response) => response.json())
-        .then((usuarios) => {
-          const foundUser = usuarios.find(
-            (usuario) => usuario.email === email && usuario.password === password
-          );
-          console.log(foundUser);
-          if (foundUser) {
-            setUser(foundUser);
-            resolve(true);
-          } else {
-            setUserError("Credenciales Inválidas");
-            resolve(false);
-          }
-        })
-        .catch((error) => reject(error));
-    });
+    return fetch(apiUrl)
+      .then((response) => response.json())
+      .then((usuarios) => {
+        const foundUser = usuarios.find(
+          (usuario) => usuario.email === email && usuario.password === password
+        );
+        console.log(foundUser);
+        if (foundUser) {
+          setUser(foundUser);
+          return true;
+        } else {
+          setUserError("Credenciales Inválidas");
+          return false;
+        }
+      })
+      .catch((error) => {
+        setUserError("Error en la petición");
+        throw error; 
+      });
   };
 
-  const save = (email, password) => {
-    const newUser = { email, password };
-    fetch(apiUrl, {
+  const save = (name, email, password) => {
+    const newUser = { name, email, password };
+    return fetch(apiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,16 +39,17 @@ const UserProvider = ({ children }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        setUser(data);
-        setTotalPurchases(data.totalPurchases); // Actualizar la suma de compras
+        setUser(data); 
         console.log("Usuario guardado:", data);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        throw error; 
+      });
   };
-  
 
   return (
-    <UserContext.Provider value={{ user, setUser, login, save, userError, totalPurchases }}>
+    <UserContext.Provider value={{ user, setUser, login, save, userError }}>
       {children}
     </UserContext.Provider>
   );
