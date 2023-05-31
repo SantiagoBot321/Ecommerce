@@ -4,24 +4,44 @@ import CartContext from '../context/CartContext';
 const Cart = () => {
   const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
 
-  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+  // Crear un objeto para contar la cantidad de veces que aparece cada producto en el carrito
+  const productCounts = {};
+  cartItems.forEach(item => {
+    if (productCounts[item.id]) {
+      productCounts[item.id]++;
+    } else {
+      productCounts[item.id] = 1;
+    }
+  });
+
+  // Crear una nueva lista de productos con elementos únicos y calcular el total
+  const uniqueCartItems = [];
+  let totalPrice = 0;
+
+  cartItems.forEach(item => {
+    if (!uniqueCartItems.find(uniqueItem => uniqueItem.id === item.id)) {
+      uniqueCartItems.push(item);
+      totalPrice += item.price * productCounts[item.id];
+    }
+  });
 
   return (
     <section>
       <h2>Carrito de compras</h2>
       {cartItems && cartItems.length > 0 ? (
-        <div>
+        <ul>
           <ul>
-            {cartItems.map((item) => (
+            {uniqueCartItems.map((item) => (
               <li key={item.id}>
                 <h3>{item.nameProduct}</h3>
                 <p>Precio: ${item.price}</p>
+                <p>Cantidad: {productCounts[item.id]}</p>
                 <button onClick={() => removeFromCart(item.id)}>Eliminar</button>
               </li>
             ))}
           </ul>
           <p>Valor total: ${totalPrice}</p>
-        </div>
+        </ul>
       ) : (
         <p>No hay productos en el carrito.</p>
       )}
