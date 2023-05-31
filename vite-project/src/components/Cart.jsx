@@ -4,7 +4,6 @@ import CartContext from '../context/CartContext';
 const Cart = () => {
   const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
 
-  // Crear un objeto para contar la cantidad de veces que aparece cada producto en el carrito
   const productCounts = {};
   cartItems.forEach(item => {
     if (productCounts[item.id]) {
@@ -14,7 +13,6 @@ const Cart = () => {
     }
   });
 
-  // Crear una nueva lista de productos con elementos únicos y calcular el total
   const uniqueCartItems = [];
   let totalPrice = 0;
 
