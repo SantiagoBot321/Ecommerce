@@ -5,7 +5,8 @@ import Login from './components/Login';
 import Picture from './components/Picture';
 import ProductGrid from './components/ProductGrid';
 import Footer from './components/Footer';
-import Purchases from './components/Purchases';
+import Register from './components/Register';
+import Cart from './components/Cart';
 
 function App() {
   const {page} =
@@ -15,9 +16,8 @@ function App() {
       <Header />
         {page == null ?<> <Picture/> <ProductGrid /></>: null}
         {page == "login" ? <Login /> : null}
-        {page == "acces" ? <> <Picture/> <ProductGrid /></> : null}
-        {page === "productGrid" ? <> <ProductGrid /> </> : null}
-        {page == "Mi carrito" ? <> <h2>Mi carrito</h2> </> : null}
+        {page == 'save' ? <> <Register /></> : null}
+        {page == "Mi carrito" ? <> <Cart /> </> : null}
       <Footer />
     </>
   );
