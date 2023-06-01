@@ -1,10 +1,53 @@
+.section{
+  width: 95%;
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .form{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-top: 3rem;
-  gap: 2rem;
-  padding: 5rem;
-  background-color: bisque;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+}
+.contenedor{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 700px;
+  height: 400px;
+  justify-content:center;
+  border: 1px solid black;
   border-radius: 1rem;
+  background-color: antiquewhite;
+}
+
+.input{
+  border-radius: 0.5rem;
+  height: 1.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.boton{
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgb(210, 198, 183);
+}
+.picside{
+  margin-top: 0.3rem;
+  border-radius: 0.5rem;
+}
+.contimg .picside{
+  width: 200px;
+}
+.contform{
+  width: 50%;
+}
+.title{
+  margin-bottom: 10px;
 }

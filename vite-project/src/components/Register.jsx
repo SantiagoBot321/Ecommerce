@@ -29,22 +29,27 @@ const Register = () => {
 
   return (
     <section className={styles.section}>
-      <h2>Se parte de la familia Minimal</h2>
-      <form action="#"  method="post" onSubmit={handleSubmit} className={styles.form}>
-        <h3>Ingresa tus datos</h3>
-        <fieldset className={styles.fieldset}>
-          <legend className={styles.label}>Email:</legend>
-          <input 
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+      <h2 className={styles.titler}>Sé parte de la familia Minimal</h2>
+      <ul className={styles.contenedor}>
+        <li className={styles.contimg}>
+          <picture><img className={styles.picside} src='/src/assets/side-register.jpg' alt="Imagen Formulario de Registro"/></picture>
+        </li>
+        <li className={styles.contform}>
+          <form action="#"  method="post" onSubmit={handleSubmit} className={styles.form}>
+          <h3>Ingresa tus datos</h3>
+          <fieldset className={styles.fieldset}>
+            <legend className={styles.label}>Email:</legend>
+            <input className={styles.input}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
         
         </fieldset>
         <fieldset className={styles.fieldset}> 
         <legend className={styles.label}>Contraseña:</legend>
-          <input
+          <input className={styles.input}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -53,7 +58,7 @@ const Register = () => {
         </fieldset>
         <fieldset className={styles.fieldset}>
         <legend className={styles.label}>Nombre:</legend>
-          <input
+          <input className={styles.input}
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -63,6 +68,8 @@ const Register = () => {
         <button type="submit" className={styles.boton}>Registrarse</button>
         {error && <p>{error}</p>}
       </form>
+      </li>
+      </ul>
     </section>
   );
 };

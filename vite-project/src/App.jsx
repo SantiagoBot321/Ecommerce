@@ -14,11 +14,10 @@ function App() {
   return (
     <>
       <Header />
-        {page == null ?<> <Picture/> <ProductGrid /></>: null}
+        {page == null ?<> <Picture/> <ProductGrid /> <Footer /></>: null}      
         {page == "login" ? <Login /> : null}
         {page == 'save' ? <> <Register /></> : null}
         {page == "Mi carrito" ? <> <Cart /> </> : null}
-      <Footer />
     </>
   );
 };

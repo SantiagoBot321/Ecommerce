@@ -1,8 +1,21 @@
 .section{
   width: 95%;
-  height: 68vh;
+  height: 65vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.contenedor{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 700px;
+  height: 500px;
+  justify-content:center;
+  border: 1px solid black;
+  border-radius: 1rem;
+  background-color: antiquewhite;
 }
 
 .form{
@@ -12,15 +25,10 @@
   align-items: center;
   gap: 1rem;
   align-items: center;
-  background-color: antiquewhite;
-  border: 1px solid rgb(210, 198, 183);
-  border-radius: 1rem;
-  margin-top: 2rem;
   padding: 1rem;
-  width: 15%;
 }
 
-input{
+.input{
   border-radius: 0.5rem;
   height: 1.5rem;
   margin-top: 0.5rem;
@@ -31,5 +39,17 @@ input{
   padding: 0.5rem;
   border-radius: 0.5rem;
   background-color: rgb(210, 198, 183);
-
+}
+.picside{
+  margin-top: 0.3rem;
+  border-radius: 0.5rem;
+}
+.contimg .picside{
+  width: 200px;
+}
+.contform{
+  width: 50%;
+}
+.titler{
+  margin-bottom: 10px;
 }

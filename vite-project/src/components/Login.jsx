@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../context/UserContext";
 import PageContext from "../context/PageContext";
+import styles from "../styles/Login.module.css"
 
 const Login = () => {
   const { login, userError, setUser } = useContext(UserContext);
@@ -23,20 +24,25 @@ const Login = () => {
 
   return (
     <section>
-      <h2>Inicia sesión</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <h2 className={styles.title}>Inicia sesión</h2>
+      <ul className={styles.contenedor}>
+      <li className={styles.contimg}>
+      <picture><img className={styles.picside} src='/src/assets/side-login.jpg' alt="Imagen Formulario de Login"/></picture>
+      </li>
+      <li className={styles.contform}>
+      <form action="#"  method="post" onSubmit={handleSubmit} className={styles.form}>
+        <label className={styles.label}>
           Email:
-          <input
+          <input className={styles.input}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </label>
-        <label>
+        <label className={styles.label}>
           Password:
-          <input
+          <input className={styles.input}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -46,6 +52,8 @@ const Login = () => {
         <button type="submit">Iniciar sesión</button>
         {userError && <p>{userError}</p>}
       </form>
+      </li>
+      </ul>
     </section>
   );
 };
