@@ -10,21 +10,24 @@ const UserProvider = ({ children }) => {
     return fetch(apiUrl)
       .then((response) => response.json())
       .then((usuarios) => {
-        const foundUser = usuarios.find(
-          (usuario) => usuario.email === email && usuario.password === password
-        );
-        console.log(foundUser);
-        if (foundUser) {
-          setUser(foundUser);
-          return true;
-        } else {
-          setUserError("Credenciales Inválidas");
+        let foundUser = usuarios.find((usuario) => usuario.email === email);
+        if (!foundUser) {
+          setUser(null);
+          setUserError("Usuario no encontrado");
           return false;
         }
+        if (foundUser.password !== password) {
+          setUser(null);
+          setUserError("La contraseña no coincide");
+          return false;
+        }
+        setUser(foundUser);
+        setUserError(null);
+        return true;
       })
       .catch((error) => {
         setUserError("Error en la petición");
-        throw error; 
+        throw error;
       });
   };
 
