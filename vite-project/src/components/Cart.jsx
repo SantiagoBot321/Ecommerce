@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import CartContext from '../context/CartContext';
+import Cartstyles from '../styles/Cart.module.css'
 
 const Cart = () => {
   const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
@@ -20,7 +21,7 @@ const Cart = () => {
               </li>
             ))}
           </ul>
-          <p>Valor total: ${totalPrice}</p> {/ Mostrar el valor total */}
+          <p>Valor total: ${totalPrice}</p> {/* Mostrar el valor total */}
         </div>
       ) : (
         <p>No hay productos en el carrito.</p>

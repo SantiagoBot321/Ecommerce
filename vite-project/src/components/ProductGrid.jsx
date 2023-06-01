@@ -33,12 +33,12 @@ const ProductGrid = () => {
             </picture>
             <h3>{product.nameProduct}</h3>
             <p>${product.price}</p>
-            <p
+            <button
               className={pGrid.producCarrito}
               onClick={() => addToCart(product)}
             >
               Añadir al carrito
-            </p>
+            </button>
           </li>
         ))}
       </ul>
