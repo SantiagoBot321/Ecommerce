@@ -32,20 +32,15 @@ const Login = () => {
           <picture>
             <img
               className={styles.picside}
-              src="/src/assets/side-login.jpg"
+              src="/src/assets/Logo-register.png"
               alt="Imagen Formulario de Login"
             />
           </picture>
         </li>
         <li className={styles.contform}>
-          <form
-            action="#"
-            method="post"
-            onSubmit={handleSubmit}
-            className={styles.form}
-          >
-            <label className={styles.label}>
-              Email:
+          <form action="#" method="post" onSubmit={handleSubmit} className={styles.form}>
+            <fieldset className={styles.fieldset}>
+            <legend className={styles.label}> Email:</legend>
               <input
                 className={styles.input}
                 type="email"
@@ -53,9 +48,9 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-            </label>
-            <label className={styles.label}>
-              Password:
+            </fieldset>
+            <fieldset className={styles.fieldset}>
+            <legend className={styles.label}>Password:</legend>
               <input
                 className={styles.input}
                 type="password"
@@ -63,12 +58,13 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-            </label>
-            <button type="submit">Iniciar sesión</button>
+            </fieldset>
+            <button type="submit" className={styles.boton}>Iniciar sesión</button>
             {userError && <p>{userError}</p>}
           </form>
         </li>
       </ul>
+      <p className={styles.return} onClick={() => change(null)}>Regresar a inicio</p>
     </section>
   );
 };

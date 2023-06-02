@@ -38,7 +38,7 @@ const Header = () => {
               <p className={headerStyle.carrito}><span className="fa-solid fa-cart-shopping"></span>({cartItemCount})</p>
             </li>
             <li className={headerStyle.boton} onClick={handleLogout}>
-              <p>Cerrar sesión</p>
+              <p>LogOut</p>
             </li>
           </>
         )}

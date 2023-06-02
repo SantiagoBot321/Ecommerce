@@ -1,61 +1,95 @@
 .section{
-  width: 95%;
+  width: 30%;
   height: 65vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 8rem;
+  margin-top: 10rem;
 }
+
+.title{
+  margin-bottom: 0.8rem;
+}
+
+.contenedor{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 1rem;
+  background-color: snow;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+}
+
+.contimg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: rgb(92, 92, 92);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding-bottom: 1rem;
+}
+
+.picside{
+  margin-top: 1rem;
+  width: 175px;
+}
+
+.contform{
+  width: 95%;
+  margin-top: 1rem;
+}
+
 .form{
   display: flex;
   flex-direction: column;
-  justify-items: flex-start;
   align-items: center;
   gap: 1rem;
-  align-items: center;
   padding: 1rem;
-}
-.contenedor{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 700px;
-  height: 400px;
-  justify-content:center;
-  border: 1px solid black;
-  border-radius: 1rem;
-  background-color: antiquewhite;
+  width: 100%;
 }
 
+.fieldset{
+  width: 100%;
+}
+
+
 .input{
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
+  padding: 0.2rem;
   height: 1.5rem;
   margin-top: 0.5rem;
   width: 100%;
+  background-color: rgb(226, 226, 226);
 }
 
 .boton{
   padding: 0.5rem;
   border-radius: 0.5rem;
   background-color: rgb(210, 198, 183);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .boton:hover{
   cursor: pointer;
 }
-.picside{
-  margin-top: 0.3rem;
-  border-radius: 0.5rem;
+
+.return{
+  margin-top: 1rem;
+  color: rgb(83, 83, 83);
+  text-decoration: underline;
 }
-.contimg .picside{
-  width: 200px;
+
+.return:hover{
+  cursor: pointer;
 }
-.contform{
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content:flex-start
-}
-.title{
-  margin-bottom: 10px;
+
+@media (max-width: 601px){
+  .section{
+    width: 80%;
+  }
 }

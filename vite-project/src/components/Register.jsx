@@ -32,11 +32,13 @@ const Register = () => {
       <h2 className={styles.titler}>Sé parte de la familia Minimal</h2>
       <ul className={styles.contenedor}>
         <li className={styles.contimg}>
-          <picture><img className={styles.picside} src='/src/assets/side-register.jpg' alt="Imagen Formulario de Registro"/></picture>
+          <picture className={styles.contpicside}>
+            <img className={styles.picside} src='/src/assets/Logo-register.png' alt="Imagen Formulario de Registro"/>
+          </picture>
         </li>
         <li className={styles.contform}>
           <form action="#"  method="post" onSubmit={handleSubmit} className={styles.form}>
-          <h3>Ingresa tus datos</h3>
+          <h3 className={styles.ingresar}>Ingresa tus datos</h3>
           <fieldset className={styles.fieldset}>
             <legend className={styles.label}>Email:</legend>
             <input className={styles.input}
@@ -70,6 +72,7 @@ const Register = () => {
       </form>
       </li>
       </ul>
+      <p className={styles.return} onClick={() => change(null)}>Regresar a inicio</p>
     </section>
   );
 };

@@ -22,37 +22,37 @@ const Cart = () => {
 
   return (
     <section className={styles.sectCart}>
-      <h2>Carrito de compras</h2>
+      <h2 className={styles.title}>Carrito de compras</h2>
       {cartItems && cartItems.length > 0 ? (
         <ul className={styles.contCart}>
           {uniqueCartItems.map((item) => (
             <li key={item.id} className={styles.contproducto}>
               <ul className={styles.contImg}>
                 <li className={styles}>
-                  <picture>
+                  <picture className={styles.contproductImg}>
                   <img src={item.img} alt='Imagen producto'className={styles.productoImg}/>
                   </picture>
                 </li>
               </ul>
               <ul className={styles.contName}>
-                <li>
+                <li className={styles.infoProducts}>
                 <h3>{item.nameProduct}</h3>
                 <p>${item.price}</p>
                 </li>
               </ul>
               <ul className={styles.contCant}>
-                <li>
+                <li className={styles.contBoton}>
                 <p onClick={() => decreaseQuantity(item.id)} className={styles.botonCart}>-</p>
                 </li>
-                <li>
+                <li className={styles.contBoton}>
                 <p className={styles.contCantNum}>{item.quantity}</p>
                 </li>
-                <li>
+                <li className={styles.contBoton}>
                 <p onClick={() => increaseQuantity(item.id)} className={styles.botonCart}>+</p>
                 </li>
               </ul>
               <ul className={styles.contElim}>
-                <li>
+                <li className={styles.contEliminar}>
                 <p onClick={() => removeFromCart(item.id)}  className={styles.botonCart}>Eliminar</p>
                 </li>
               </ul>
@@ -83,15 +83,15 @@ const Cart = () => {
         </ul>
       ) : (
         <ul className={styles.empty}>
-           <li>
+           <li className={styles.contAt}>
             <p> 
               <span className="fa-solid fa-circle-exclamation fa-2xl"></span>
             </p>
             </li>
-          <li>
+          <li className={styles.contTexto}>
             <p>No hay productos en el carrito.</p>
           </li>
-          <li>
+          <li className={styles.contBack}>
             <p className={styles.emptyClick} onClick={() => change(null)}>
               Regresa al <span className={styles.catIni}>catálogo</span> y selecciona algún producto.
             </p>

@@ -4,10 +4,12 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 5rem;
+    width: 50%;
   }
   
   .contCart{
-    width: 80%;
+    width: 100%;
+    margin-top: 1rem;
   }
   
   .contproducto{
@@ -17,13 +19,17 @@
     justify-content: center;
     width: 90%;
     padding-bottom: 2rem;
-    margin: 2rem;
+    margin-bottom: 2rem;
     border-bottom: 1px solid rgb(147, 147, 147);
     gap: 1rem;
   }
   
   .contImg{
     width: 15%;
+  }
+
+  .productoImg{
+    width: 100%;
   }
   
   .contName{
@@ -50,7 +56,7 @@
   
   .contElim{
     width: auto;
-    background-color: rgb(147, 147, 147);
+    background-color: rgb(222, 222, 222);
     padding: 5px;
     border-radius: 10px;
   }
@@ -59,14 +65,10 @@
     cursor: pointer;
   }
   
-  .productoImg{
-    width: 100%;
-  }
-  
   .total{
     text-align: start;
     padding-left: 2.5rem;
-  
+    font-weight: bold;
   }
   .Vtotal{
     display: flex;
@@ -97,10 +99,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: rgb(184, 174, 156);
-    width: 30%;
+    width: 40%;
     text-align: center;
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 0.5rem;
     margin-top: 4rem;
     gap: 1rem;
@@ -115,4 +118,23 @@
 
   span {
     cursor: pointer;
+  }
+
+  @media (max-width: 601px){
+    .sectCart{
+      width: 90%;
+    }
+    .contproducto{
+      width: 100%;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgb(147, 147, 147);
+      gap: 0.5rem;
+    }
+    .infoProducts h3{
+      font-size: 15px;
+    }
+    .empty{
+      width: 90%;
+    }
   }
