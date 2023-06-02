@@ -60,7 +60,7 @@ const Cart = () => {
           ))}
           <ul className={styles.Vtotal}>
             <li>
-              <p className={styles.total}>Valor total: ${totalPrice.toFixed(3)}</p> 
+              <p className={styles.total}>Valor total: ${totalPrice.toFixed()}</p> 
             </li>
             <li>
             {cartItems && cartItems.length > 0 && (
