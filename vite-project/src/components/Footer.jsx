@@ -11,7 +11,7 @@ const Footer = () => {
           </picture>
         </li>
       </ul>
-      <ul>
+      <ul className={footerStyles.dir}>
         <li>
           <p>Cra. 25a #36d Sur-446 | 355 000 0000</p>
         </li>
