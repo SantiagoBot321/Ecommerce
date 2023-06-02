@@ -66,8 +66,7 @@ const Cart = () => {
             {cartItems && cartItems.length > 0 && (
               <p onClick={clearCart} className={styles.Vaciar}>
                 <span className="fa-regular fa-trash-can fa-lg"></span>
-              </p>
-      )}
+              </p>)}
             </li>
           
           </ul>
@@ -84,12 +83,17 @@ const Cart = () => {
         </ul>
       ) : (
         <ul className={styles.empty}>
+           <li>
+            <p> 
+              <span className="fa-solid fa-circle-exclamation fa-2xl"></span>
+            </p>
+            </li>
           <li>
             <p>No hay productos en el carrito.</p>
           </li>
           <li>
-            <p>
-              Selecciona algún producto para proceder con la compra.
+            <p className={styles.emptyClick} onClick={() => change(null)}>
+              Regresa al <span className={styles.catIni}>catálogo</span> y selecciona algún producto.
             </p>
           </li>
 

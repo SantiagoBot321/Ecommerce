@@ -93,3 +93,22 @@
     padding: 0.5rem;
     border-radius: 0.5rem;
   }
+  .empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(184, 174, 156);
+    width: 30%;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 4rem;
+    gap: 1rem;
+  }
+  .emptyClick:hover{
+    cursor: pointer;
+  }
+  .catIni{
+    text-decoration: underline;
+    color: blue;
+  }

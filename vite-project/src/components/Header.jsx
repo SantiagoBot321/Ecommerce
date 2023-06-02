@@ -5,7 +5,6 @@ import UserContext from "../context/UserContext";
 import logo from '../assets/Logo-minimal.png';
 import CartContext from "../context/CartContext";
 
-
 const Header = () => {
   const { change } = useContext(PageContext);
   const { user, setUser } = useContext(UserContext);
@@ -13,6 +12,7 @@ const Header = () => {
 
   const handleLogout = () => {
     setUser(null); 
+    change(null);
   };
 
   const cartItemCount = cartItems ? cartItems.length : 0;
