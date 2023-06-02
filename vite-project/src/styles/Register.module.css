@@ -41,6 +41,9 @@
   border-radius: 0.5rem;
   background-color: rgb(210, 198, 183);
 }
+.boton:hover{
+  cursor: pointer;
+}
 .picside{
   margin-top: 0.3rem;
   border-radius: 0.5rem;
