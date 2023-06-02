@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import CartContext from '../context/CartContext';
-
+import styles from '../styles/Cart.module.css'
 const Cart = () => {
   const { cartItems, removeFromCart, clearCart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
 
@@ -18,28 +18,60 @@ const Cart = () => {
   });
 
   return (
-    <section>
+    <section className={styles.sectCart}>
       <h2>Carrito de compras</h2>
       {cartItems && cartItems.length > 0 ? (
-        <ul>
+        <ul className={styles.contCart}>
           {uniqueCartItems.map((item) => (
-            <li key={item.id}>
-              <h3>{item.nameProduct}</h3>
-              <p>Precio: ${item.price}</p>
-              <p>Cantidad: {item.quantity}</p>
-              <button onClick={() => removeFromCart(item.id)}>Eliminar</button>
-              <button onClick={() => increaseQuantity(item.id)}>+</button>
-              <button onClick={() => decreaseQuantity(item.id)}>-</button>
+            <li key={item.id} className={styles.contproducto}>
+              <ul className={styles.contImg}>
+                <li className={styles}>
+                  <picture>
+                  <img src={item.img} alt='Imagen producto'className={styles.productoImg}/>
+                  </picture>
+                </li>
+              </ul>
+              <ul className={styles.contName}>
+                <li>
+                <h3>{item.nameProduct}</h3>
+                <p>${item.price}</p>
+                </li>
+              </ul>
+              <ul className={styles.contCant}>
+                <li>
+                <p onClick={() => decreaseQuantity(item.id)} className={styles.botonCart}>-</p>
+                </li>
+                <li>
+                <p className={styles.contCantNum}>{item.quantity}</p>
+                </li>
+                <li>
+                <p onClick={() => increaseQuantity(item.id)} className={styles.botonCart}>+</p>
+                </li>
+              </ul>
+              <ul className={styles.contElim}>
+                <li>
+                <p onClick={() => removeFromCart(item.id)}  className={styles.botonCart}>Eliminar</p>
+                </li>
+              </ul>
             </li>
           ))}
+          <ul className={styles.Vtotal}>
+            <li>
+              <p className={styles.total}>Valor total: ${totalPrice.toFixed(3)}</p> 
+            </li>
+            <li>
+            {cartItems && cartItems.length > 0 && (
+              <p onClick={clearCart} className={styles.Vaciar}>
+                <span className="fa-regular fa-trash-can fa-lg"></span>
+              </p>
+      )}
+            </li>
+          
+          </ul>
         </ul>
       ) : (
         <p>No hay productos en el carrito.</p>
       )}
-      {cartItems && cartItems.length > 0 && (
-        <button onClick={clearCart}>Vaciar carrito</button>
-      )}
-      <p>Valor total: ${totalPrice.toFixed(3)}</p> 
     </section>
   );
 };
