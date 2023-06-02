@@ -4,11 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 8rem;
 }
 .form{
   display: flex;
   flex-direction: column;
-  justify-items: center;
+  justify-items: flex-start;
   align-items: center;
   gap: 1rem;
   align-items: center;
@@ -47,6 +48,10 @@
 }
 .contform{
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:flex-start
 }
 .title{
   margin-bottom: 10px;

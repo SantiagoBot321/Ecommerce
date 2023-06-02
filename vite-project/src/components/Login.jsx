@@ -25,7 +25,7 @@ const Login = () => {
   };
 
   return (
-    <section>
+    <section className={styles.section}>
       <h2 className={styles.title}>Inicia sesión</h2>
       <ul className={styles.contenedor}>
         <li className={styles.contimg}>
