@@ -1,7 +1,10 @@
 import React, { useContext } from 'react';
 import CartContext from '../context/CartContext';
 import styles from '../styles/Cart.module.css'
+import PageContext from "../context/PageContext";
+
 const Cart = () => {
+  const { change } = useContext(PageContext);
   const { cartItems, removeFromCart, clearCart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
 
   const uniqueCartItems = [];
@@ -68,9 +71,29 @@ const Cart = () => {
             </li>
           
           </ul>
+          <ul className={styles.contPay}>
+          <li>
+            <p>
+              Pagar
+            </p>
+          </li>
+          <li>
+            <p onClick={() => change(null)}>Eligir más productos</p>
+          </li>
+          </ul>
         </ul>
       ) : (
-        <p>No hay productos en el carrito.</p>
+        <ul className={styles.empty}>
+          <li>
+            <p>No hay productos en el carrito.</p>
+          </li>
+          <li>
+            <p>
+              Selecciona algún producto para proceder con la compra.
+            </p>
+          </li>
+
+        </ul>
       )}
     </section>
   );
